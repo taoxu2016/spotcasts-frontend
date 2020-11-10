@@ -69,6 +69,11 @@ const GlobalStyle = createGlobalStyle`
 		scrollbar-width: none;
 		padding-bottom: 5rem;
 		line-height: 1.8;
+		font-size: 0.9rem;
+	}
+
+	.show-notes strong {
+		font-weight: normal;
 	}
 
 	.show-notes::-webkit-scrollbar {
@@ -80,7 +85,6 @@ const GlobalStyle = createGlobalStyle`
 	.show-notes ul,
 	.show-notes li {
 		padding-bottom: 0.5rem;
-		font-size: 0.9rem;
 	}
 
 	.show-notes a {

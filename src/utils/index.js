@@ -1,6 +1,7 @@
-export const client = async (endpoint, { body, ...customConfig } = {}) => {
+export const client = async (endpoint, { body, headers, ...customConfig } = {}) => {
 	const config = {
 		method: body ? "POST" : "GET",
+		...customConfig,
 		headers: {
 			"Content-Type": "applications/json",
 			"Accept": "application/json"
@@ -9,6 +10,10 @@ export const client = async (endpoint, { body, ...customConfig } = {}) => {
 
 	if(body) {
 		config.body = JSON.stringify(body);
+	}
+
+	if(headers) {
+		config.headers = headers;
 	}
 
 	const res = await fetch(endpoint, config)

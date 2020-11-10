@@ -65,6 +65,7 @@ const Searchbar = () => {
 	return (
 		<StyledSearch>
 			<input type="text" onKeyUp={searchPodcasts} onChange={inputChange} />
+
 			{searchResults.length > 0 && (
 				<div className="search-results">
 					{searchResults.map(searchResult => (
