@@ -12,6 +12,19 @@ const GlobalStyle = createGlobalStyle`
 		box-sizing: inherit;
 	}
 
+	*::-webkit-scrollbar {
+		width: 6px;
+	}
+
+	*::-webkit-scrollbar-track {
+		background-color: ${props => props.theme.violet};
+	}
+
+	*::-webkit-scrollbar-thumb {
+		background-color: ${props => props.theme.pink};
+		border-radius: 4px;
+	}
+
 	body {
 		width: 80%;
 		margin: 2rem auto;
@@ -31,6 +44,10 @@ const GlobalStyle = createGlobalStyle`
 		color: inherit;
 	}
 
+	li {
+		list-style: none;
+	}
+
 	input, button {
 		font-size: 1rem;
 		font-family: ${props => props.theme.font};
@@ -38,6 +55,40 @@ const GlobalStyle = createGlobalStyle`
 
 	input:focus, button:focus, textarea:focus {
 		outline: none;
+	}
+
+	button, svg {
+		cursor: pointer;
+	}
+
+	/* global classes */
+	.show-notes {
+		padding: 1rem;
+		max-height: 500px;
+		overflow-y: scroll;
+		scrollbar-width: none;
+		padding-bottom: 5rem;
+		line-height: 1.8;
+	}
+
+	.show-notes::-webkit-scrollbar {
+		width: 0;
+		height: 0;
+	}
+
+	.show-notes p,
+	.show-notes ul,
+	.show-notes li {
+		padding-bottom: 0.5rem;
+		font-size: 0.9rem;
+	}
+
+	.show-notes a {
+		color: ${props => props.theme.yellow};
+	}
+
+	.show-notes img {
+		display: none;
 	}
 `;
 

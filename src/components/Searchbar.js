@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import LinkWrapper from "./LinkWrapper";
 import { stripStr, client } from "../utils";
 
 const StyledSearch = styled.div`
@@ -8,19 +9,6 @@ const StyledSearch = styled.div`
 		background-color: ${props => props.theme.violet};
 		color: ${props => props.theme.primaryColor};
 		border: 1px solid ${props => props.theme.violet};
-		border-radius: 4px;
-	}
-
-	*::-webkit-scrollbar {
-		width: 6px;
-	}
-
-	*::-webkit-scrollbar-track {
-		background-color: ${props => props.theme.violet};
-	}
-
-	*::-webkit-scrollbar-thumb {
-		background-color: #BF4863;
 		border-radius: 4px;
 	}
 
@@ -62,7 +50,7 @@ const Searchbar = () => {
 		if (e.keyCode === 13) {
 			const searchTerm = e.target.value;
 			const { data } = await client(
-				`http://localhost:3000/api/podcasts?searchTerm=${searchTerm}`
+				`${process.env.NEXT_PUBLIC_BE}/podcasts?searchTerm=${searchTerm}`
 			);
 			setSearchResults(data.results);
 		}
@@ -80,13 +68,18 @@ const Searchbar = () => {
 			{searchResults.length > 0 && (
 				<div className="search-results">
 					{searchResults.map(searchResult => (
-						<div className="search-result" key={searchResult.uuid}>
-							<img src={searchResult.image_big} alt="artwork" />
-							<div className="search-result-info">
-								<span>{stripStr(searchResult.title, 28)}</span>
-								<span>{stripStr(searchResult.author, 28)}</span>
+						<LinkWrapper
+							key={searchResult.uuid}
+							href={`/podcasts/${searchResult.uuid}`}
+						>
+							<div className="search-result">
+								<img src={searchResult.image_big} alt="artwork" />
+								<div className="search-result-info">
+									<span>{stripStr(searchResult.title, 28)}</span>
+									<span>{stripStr(searchResult.author, 28)}</span>
+								</div>
 							</div>
-						</div>
+						</LinkWrapper>
 					))}
 				</div>
 			)}

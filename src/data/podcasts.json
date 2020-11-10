@@ -1,3 +1,71 @@
 [
-{"uuid": "654a76db25a046d6bad66317b94df0e8", "text": "Naval", "host": "Naval", "thumbnail": "https://cdn-images-1.listennotes.com/podcasts/naval-naval-U7u0r1cy9vR-aWlXzjy4T2I.1250x1250.jpg", "description": "Naval on wealth and happiness. On Twitter at @naval.", "latest_episode": {"title": "Matt Ridley: How Innovation Works, Part 2", "aired_on": "July 15, 2020", "episode_link": "https://www.listennotes.com/podcasts/naval/matt-ridley-how-innovation-5OMjEhpISRl/", "duration": "00:30:32"}, "previous_episodes": [{"title": "Matt Ridley: How Innovation Works, Part 1", "aired_on": "July 9, 2020", "episode_link": "https://www.listennotes.com/podcasts/naval/matt-ridley-how-innovation-vo0lTsUMu8Q/", "duration": "00:29:50"}, {"title": "How to Angel Invest, Part 2", "aired_on": "June 12, 2020", "episode_link": "https://www.listennotes.com/podcasts/naval/how-to-angel-invest-part-2-7LPqWaKEXS8/", "duration": "00:36:28"}, {"title": "The Path to Peace Is Truth", "aired_on": "March 26, 2020", "episode_link": "https://www.listennotes.com/podcasts/naval/the-path-to-peace-is-truth-RdsbUCqXcZQ/", "duration": "00:01:45"}, {"title": "Groups Search for Consensus, Individuals Search for Truth", "aired_on": "March 24, 2020", "episode_link": "https://www.listennotes.com/podcasts/naval/groups-search-for-consensus-aBbiAKlOUMn/", "duration": "00:02:05"}, {"title": "The Closer You Are to the Truth, the More Silent You Become Inside", "aired_on": "March 10, 2020", "episode_link": "https://www.listennotes.com/podcasts/naval/the-closer-you-are-to-the-RNodzhrm5xK/", "duration": "00:01:15"}, {"title": "Happiness Is Peace in Motion", "aired_on": "March 5, 2020", "episode_link": "https://www.listennotes.com/podcasts/naval/happiness-is-peace-in-motion-36_7gbipfTF/", "duration": "00:02:27"}, {"title": "Finding Peace from Mind", "aired_on": "March 3, 2020", "episode_link": "https://www.listennotes.com/podcasts/naval/finding-peace-from-mind-pQRswPECar5/", "duration": "00:02:10"}, {"title": "Breaking Addiction is Socially Unacceptable", "aired_on": "Feb. 26, 2020", "episode_link": "https://www.listennotes.com/podcasts/naval/breaking-addiction-is-yOwuMn0K9ei/", "duration": "00:01:47"}, {"title": "The Modern Struggle Is Fighting Weaponized Addiction", "aired_on": "Feb. 24, 2020", "episode_link": "https://www.listennotes.com/podcasts/naval/the-modern-struggle-is-X8cNMrxylCt/", "duration": "00:01:38"}]}
+	{
+		"uuid": "654a76db25a046d6bad66317b94df0e8",
+		"title": "Naval",
+		"host": "Naval",
+		"thumbnail": "https://cdn-images-1.listennotes.com/podcasts/naval-naval-U7u0r1cy9vR-aWlXzjy4T2I.1250x1250.jpg",
+		"description": "Naval on wealth and happiness. On Twitter at @naval.",
+		"latest_episode": {
+			"title": "Matt Ridley: How Innovation Works, Part 2",
+			"aired_on": "July 15, 2020",
+			"episode_link": "https://www.listennotes.com/podcasts/naval/matt-ridley-how-innovation-5OMjEhpISRl/",
+			"duration": "00:30:32"
+		},
+		"previous_episodes": [
+			{
+				"title": "Matt Ridley: How Innovation Works, Part 1",
+				"aired_on": "July 9, 2020",
+				"episode_link": "https://www.listennotes.com/podcasts/naval/matt-ridley-how-innovation-vo0lTsUMu8Q/",
+				"duration": "00:29:50"
+			},
+			{
+				"title": "How to Angel Invest, Part 2",
+				"aired_on": "June 12, 2020",
+				"episode_link": "https://www.listennotes.com/podcasts/naval/how-to-angel-invest-part-2-7LPqWaKEXS8/",
+				"duration": "00:36:28"
+			},
+			{
+				"title": "The Path to Peace Is Truth",
+				"aired_on": "March 26, 2020",
+				"episode_link": "https://www.listennotes.com/podcasts/naval/the-path-to-peace-is-truth-RdsbUCqXcZQ/",
+				"duration": "00:01:45"
+			},
+			{
+				"title": "Groups Search for Consensus, Individuals Search for Truth",
+				"aired_on": "March 24, 2020",
+				"episode_link": "https://www.listennotes.com/podcasts/naval/groups-search-for-consensus-aBbiAKlOUMn/",
+				"duration": "00:02:05"
+			},
+			{
+				"title": "The Closer You Are to the Truth, the More Silent You Become Inside",
+				"aired_on": "March 10, 2020",
+				"episode_link": "https://www.listennotes.com/podcasts/naval/the-closer-you-are-to-the-RNodzhrm5xK/",
+				"duration": "00:01:15"
+			},
+			{
+				"title": "Happiness Is Peace in Motion",
+				"aired_on": "March 5, 2020",
+				"episode_link": "https://www.listennotes.com/podcasts/naval/happiness-is-peace-in-motion-36_7gbipfTF/",
+				"duration": "00:02:27"
+			},
+			{
+				"title": "Finding Peace from Mind",
+				"aired_on": "March 3, 2020",
+				"episode_link": "https://www.listennotes.com/podcasts/naval/finding-peace-from-mind-pQRswPECar5/",
+				"duration": "00:02:10"
+			},
+			{
+				"title": "Breaking Addiction is Socially Unacceptable",
+				"aired_on": "Feb. 26, 2020",
+				"episode_link": "https://www.listennotes.com/podcasts/naval/breaking-addiction-is-yOwuMn0K9ei/",
+				"duration": "00:01:47"
+			},
+			{
+				"title": "The Modern Struggle Is Fighting Weaponized Addiction",
+				"aired_on": "Feb. 24, 2020",
+				"episode_link": "https://www.listennotes.com/podcasts/naval/the-modern-struggle-is-X8cNMrxylCt/",
+				"duration": "00:01:38"
+			}
+		]
+	}
 ]
