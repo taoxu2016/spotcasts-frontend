@@ -72,6 +72,7 @@ const PodcastsSnap = ({ podcast }) => {
 			published: podcast.latest_episode.published,
 			showNotes: data.show_notes[0],
 			audioUrl: data.episode_audio,
+			id: data.episode_uuid,
       open: true,
 		})
 	}

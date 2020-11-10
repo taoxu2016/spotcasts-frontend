@@ -1,4 +1,4 @@
-export default {
+export const darkTheme = {
 	font: 'Poppins',
 	font2: 'Roboto',
 	bg: '#1B2133',
@@ -8,8 +8,7 @@ export default {
 	black: "#161E2E",
 	pink: "#BF4863",
 	yellow: "#EABB67",
-	red: "#FF5572",
-	blue: "#5B8AA4",
-	green: "#8BA571",
 	purple: "#814FC7",
+	sliderBg: "#697098",
+	sliderThumb: "#BEC5D4",
 };

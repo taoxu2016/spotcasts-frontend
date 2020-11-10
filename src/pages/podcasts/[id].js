@@ -2,6 +2,7 @@ import { useEffect, useContext, useRef, useState } from "react";
 import Head from 'next/head';
 import styled from "styled-components";
 import Episode from "../../components/Episode";
+import { PlayerContext } from '../../context/PlayerContext';
 import { client, secondsToHMS } from "../../utils";
 
 const Wrapper = styled.div`
@@ -46,6 +47,7 @@ const Wrapper = styled.div`
 `;
 
 const ViewPodcasts = ({ channel, episodes, nextPubDate }) => {
+	const { player } = useContext(PlayerContext);
 	const [nextPubDateSt, setNextPubDate] = useState(nextPubDate);
 	const [episodesSt, setEpisodes] = useState(episodes);
 
@@ -81,10 +83,10 @@ const ViewPodcasts = ({ channel, episodes, nextPubDate }) => {
 					<button className="btn" onClick={getMoreEpisodes}>Load More</button>
 				</div>
 
-				<div className="about">
+				{!player.open && <div className="about">
 					<h2>About</h2>
 					<div dangerouslySetInnerHTML={{__html: channel.description}} />
-				</div>
+				</div>}
 			</div>
 		</Wrapper>
 	);

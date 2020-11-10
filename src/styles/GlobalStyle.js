@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 	html {
@@ -91,7 +91,7 @@ const GlobalStyle = createGlobalStyle`
 		color: ${props => props.theme.yellow};
 	}
 
-	.show-notes img {
+	.show-notes img, .show-notes hr{
 		display: none;
 	}
 `;

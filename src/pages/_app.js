@@ -5,7 +5,7 @@ import { ThemeProvider } from "styled-components";
 import { PlayerProvider } from "../context/PlayerContext";
 import GlobalStyle from "../styles/GlobalStyle";
 import PlayerDrawer from '../components/PlayerDrawer';
-import theme from "../styles/theme";
+import { darkTheme }from "../styles/theme";
 
 const App = ({ Component, pageProps }) => {
 	return (
@@ -14,7 +14,7 @@ const App = ({ Component, pageProps }) => {
 				<title>SpotCasts</title>
 				<link rel="icon" href="/podcast.svg" />
 			</Head>
-			<ThemeProvider theme={theme}>
+			<ThemeProvider theme={darkTheme}>
 				<GlobalStyle />
 				<PlayerDrawer />
 				<Component {...pageProps} />

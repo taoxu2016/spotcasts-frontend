@@ -1,16 +1,15 @@
-import { useEffect, useState, useRef, useContext } from "react";
+import { useEffect, useContext } from "react";
+import Head from 'next/head';
 import styled, { css } from "styled-components";
 import AudioPlayer from "./AudioPlayer";
-import { PlayIcon } from "./Icons";
 import { PlayerContext } from "../context/PlayerContext";
-import { secondsToHMS } from "../utils";
 
 const Wrapper = styled.div`
 	position: fixed;
 	top: 0;
 	right: 0;
 	z-index: 2;
-	width: 460px;
+	width: 440px;
 	min-height: 100vh;
 	padding-top: 1.5rem;
 	background-color: ${props => props.theme.violet};
@@ -51,6 +50,10 @@ const PlayerDrawer = () => {
 
 	return (
 		<Wrapper open={player.open}>
+			<Head>
+				<title>{player.title || "SpotCasts"}</title>
+			</Head>
+
 			<div className="player-episode">
 				<img src={player.thumbnail} alt="thumbnail" />
 				<div className="episode-info">
@@ -60,7 +63,7 @@ const PlayerDrawer = () => {
 				</div>
 			</div>
 
-			<AudioPlayer audioUrl={player.audioUrl} />
+			<AudioPlayer audioUrl={player.audioUrl} episodeId={player.id}/>
 
 			<div className="show-notes"></div>
 		</Wrapper>

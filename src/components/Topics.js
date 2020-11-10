@@ -31,8 +31,9 @@ const Wrapper = styled.div`
 
 const Topics = ({ currentTopic, updatePodcasts, updateTopic }) => {
 	const getPodcasts = async ({ url, value: topic }) => {
-		const endpoint = `${process.env.NEXT_PUBLIC_SCRAPY}/?url=${url}&spider_name=podcasts_collection`;
+		updateTopic(topic)
 
+		const endpoint = `${process.env.NEXT_PUBLIC_SCRAPY}/?url=${url}&spider_name=podcasts_collection`;
 		const options = {
 			headers: { 
 				"Content-Type": "application/x-www-form-urlencoded" 
@@ -41,7 +42,6 @@ const Topics = ({ currentTopic, updatePodcasts, updateTopic }) => {
 
 		const { items } = await client(endpoint, options);
 		updatePodcasts(items[0].podcasts);
-		updateTopic(topic)
 	};
 
 	return (
