@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, useContext } from "react";
 import styled from "styled-components";
 import { PauseIcon, CloseIcon, PlayIcon } from "./Icons";
-import { PlayerContext } from "../context/PlayerContext";
+import { DrawerContext } from "../context/DrawerContext";
 import { secondsToHMS } from "../utils";
 
 const Wrapper = styled.div`
@@ -71,10 +71,8 @@ const Wrapper = styled.div`
 `;
 
 const AudioPlayer = ({ audioUrl, episodeId }) => {
-	// context
-	const { setPlayer } = useContext(PlayerContext);
+	const { drawer, setDrawer } = useContext(DrawerContext);
 
-	// state
 	const [controls, setControls] = useState({
 		volume: 0.8,
 		playbackRate: 1
@@ -83,11 +81,9 @@ const AudioPlayer = ({ audioUrl, episodeId }) => {
 	const [showRuntime, setShowRuntime] = useState(false);
 	const [playing, setPlaying] = useState(false);
 
-	// refs
 	const audioRef = useRef(null);
 	const progressRef = useRef(null);
 
-	// methods
 	const closePlayer = () => {
 		const recentlyPlayed =
 			JSON.parse(localStorage.getItem("recentlyPlayed")) || {};
@@ -98,17 +94,19 @@ const AudioPlayer = ({ audioUrl, episodeId }) => {
 		};
 
 		localStorage.setItem("recentlyPlayed", JSON.stringify(updates));
-		setPlayer({ open: false });
+		drawer.triggeredFrom
+			? setDrawer({ open: true, type: drawer.triggeredFrom })
+			: setDrawer({ open: false });
 	};
 
 	const handlePlayback = () => {
 		const audioPlayer = audioRef.current;
 
-		const newPlaybackRate = (controls.playbackRate + 0.25) > 2 ? 0.75 : controls.playbackRate + 0.25;
-		setControls(controls => ({...controls, playbackRate: newPlaybackRate}));
+		const newPlaybackRate =
+			controls.playbackRate + 0.25 > 2 ? 0.75 : controls.playbackRate + 0.25;
+		setControls(controls => ({ ...controls, playbackRate: newPlaybackRate }));
 		audioPlayer.playbackRate = newPlaybackRate;
-
-	}
+	};
 
 	const handleControls = e =>
 		setControls(controls => {
@@ -135,11 +133,13 @@ const AudioPlayer = ({ audioUrl, episodeId }) => {
 		const audioPlayer = audioRef.current;
 		const progress = progressRef.current;
 
-		// event listeners
 		audioPlayer.addEventListener("timeupdate", () => {
 			const progressFilled = document.querySelector(".progress-filled");
-			const percent = (audioPlayer.currentTime / audioPlayer.duration) * 100;
-			progressFilled.style.width = `${percent}%`;
+
+			if (progressFilled) {
+				const percent = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+				progressFilled.style.width = `${percent}%`;
+			}
 		});
 
 		audioPlayer.addEventListener("ended", () => {
@@ -153,7 +153,7 @@ const AudioPlayer = ({ audioUrl, episodeId }) => {
 			}
 
 			localStorage.setItem("recentlyPlayed", JSON.stringify(recentlyPlayed));
-			setPlayer({ open: false });
+			setDrawer({ open: false });
 		});
 
 		progress.addEventListener("mousemove", e => {
@@ -197,14 +197,14 @@ const AudioPlayer = ({ audioUrl, episodeId }) => {
 			<audio ref={audioRef} style={{ display: "none" }} />
 
 			<div className="player">
-				{playing && <PauseIcon onClick={togglePlay}/> }
-				{!playing && <PlayIcon onClick={togglePlay}/> }
+				{playing && <PauseIcon onClick={togglePlay} />}
+				{!playing && <PlayIcon onClick={togglePlay} />}
 
 				<span className="playback-rate" onClick={handlePlayback}>
 					{controls.playbackRate}x
 				</span>
 
-				<CloseIcon onClick={closePlayer}/>
+				<CloseIcon onClick={closePlayer} />
 
 				<input
 					name="volume"

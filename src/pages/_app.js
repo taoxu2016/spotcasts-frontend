@@ -4,25 +4,25 @@ import Head from "next/head";
 
 // providers
 import { ThemeProvider } from "styled-components";
-import { PlayerProvider } from "../context/PlayerContext";
+import { DrawerProvider } from "../context/DrawerContext";
 
 import GlobalStyle from "../styles/GlobalStyle";
-import PlayerDrawer from "../components/PlayerDrawer";
+import Drawer from "../components/Drawer";
 import { darkTheme } from "../styles/theme";
 
 const App = ({ Component, pageProps }) => {
 	return (
-		<PlayerProvider>
+		<DrawerProvider>
 			<ThemeProvider theme={darkTheme}>
 				<Head>
 					<title>SpotCasts</title>
 					<link rel="icon" href="/podcast.svg" />
 				</Head>
 				<GlobalStyle />
-				<PlayerDrawer />
+				<Drawer />
 				<Component {...pageProps} />
 			</ThemeProvider>
-		</PlayerProvider>
+		</DrawerProvider>
 	);
 };
 

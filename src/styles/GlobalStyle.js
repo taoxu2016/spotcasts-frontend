@@ -72,7 +72,7 @@ const GlobalStyle = createGlobalStyle`
 		font-size: 0.9rem;
 	}
 
-	.show-notes strong {
+	.show-notes strong, .show-notes b {
 		font-weight: normal;
 	}
 

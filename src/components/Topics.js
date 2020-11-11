@@ -2,14 +2,11 @@ import styled from "styled-components";
 import { client } from "../utils";
 import topics from "../data/topics";
 
-const Wrapper = styled.div`
-	position: fixed !important;
-	width: 430px;
-	left: 67%;
+export const StyledTopics = styled.div`
 	margin-top: 2rem;
 
 	h3 {
-		margin-bottom: 0.8rem;
+		margin-bottom: 0.4rem;
 		opacity: 0.5;
 	}
 
@@ -26,6 +23,7 @@ const Wrapper = styled.div`
 	.selected {
 		background-color: ${props => props.theme.purple};
 		color: white;
+		box-shadow: ${props => props.theme.bs1};
 	}
 `;
 
@@ -38,8 +36,9 @@ const Topics = ({ currentTopic, updatePodcasts, updateTopic }) => {
 	};
 
 	return (
-		<Wrapper>
+		<StyledTopics>
 			<h3>Topics</h3>
+
 			{topics.map(topic => (
 				<span
 					key={topic.label}
@@ -49,7 +48,7 @@ const Topics = ({ currentTopic, updatePodcasts, updateTopic }) => {
 					{topic.label}
 				</span>
 			))}
-		</Wrapper>
+		</StyledTopics>
 	);
 };
 

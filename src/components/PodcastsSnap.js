@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import styled from "styled-components";
-import { PlayerContext } from "../context/PlayerContext";
+import { DrawerContext } from "../context/DrawerContext";
 import LinkWrapper from './LinkWrapper'
 import { client, stripStr } from "../utils";
 
@@ -58,14 +58,14 @@ const Wrapper = styled.div`
 `;
 
 const PodcastsSnap = ({ podcast }) => {
-	const { setPlayer } = useContext(PlayerContext);
+	const { setDrawer } = useContext(DrawerContext);
 
 	const playEpisode = async () => {
 		const { episode_link } = podcast.latest_episode;
 		const endpoint = `${process.env.NEXT_PUBLIC_BE}/episode?episode_link=${episode_link}`
 		const { data } = await client(endpoint)
 
-		setPlayer({
+		setDrawer({
 			title: podcast.latest_episode.title,
 			thumbnail: podcast.thumbnail,
 			duration: podcast.latest_episode.duration,
@@ -73,6 +73,7 @@ const PodcastsSnap = ({ podcast }) => {
 			showNotes: data.show_notes[0],
 			audioUrl: data.episode_audio,
 			id: data.episode_uuid,
+			type: "PLAYER",
       open: true,
 		})
 	}

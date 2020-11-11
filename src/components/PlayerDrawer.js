@@ -1,21 +1,10 @@
-import { useEffect, useContext } from "react";
-import Head from 'next/head';
-import styled, { css } from "styled-components";
+import { useEffect, useContext } from 'react';
+import Head from "next/head";
+import styled from "styled-components";
 import AudioPlayer from "./AudioPlayer";
-import { PlayerContext } from "../context/PlayerContext";
+import { DrawerContext } from '../context/DrawerContext';
 
 const Wrapper = styled.div`
-	position: fixed;
-	top: 0;
-	right: 0;
-	z-index: 2;
-	width: 440px;
-	min-height: 100vh;
-	padding-top: 1.5rem;
-	background-color: ${props => props.theme.violet};
-	transform: translateX(199%);
-	transition: all 0.3s ease-in-out;
-
 	img {
 		width: 80px;
 		height: 80px;
@@ -33,37 +22,31 @@ const Wrapper = styled.div`
 		opacity: 0.5;
 		font-size: 0.9rem;
 	}
-
-	${props =>
-		props.open &&
-		css`
-			transform: translateX(0);
-		`}
 `;
 
 const PlayerDrawer = () => {
-	const { player } = useContext(PlayerContext);
+	const { drawer } = useContext(DrawerContext);
 
 	useEffect(async () => {
-		document.querySelector(".show-notes").innerHTML = player.showNotes;
-	}, [player.audioUrl]);
+		document.querySelector(".show-notes").innerHTML = drawer.showNotes;
+	}, [drawer.audioUrl]);
 
 	return (
-		<Wrapper open={player.open}>
+		<Wrapper>
 			<Head>
-				<title>{player.title || "SpotCasts"}</title>
+				<title>{drawer.title || "SpotCasts"}</title>
 			</Head>
 
 			<div className="player-episode">
-				<img src={player.thumbnail} alt="thumbnail" />
+				<img src={drawer.thumbnail} alt="thumbnail" />
 				<div className="episode-info">
-					<h4>{player.title}</h4>
-					<span>{player.published}</span> <span>&bull;</span>{" "}
-					<span>{player.duration}</span>
+					<h4>{drawer.title}</h4>
+					<span>{drawer.published}</span> <span>&bull;</span>{" "}
+					<span>{drawer.duration}</span>
 				</div>
 			</div>
 
-			<AudioPlayer audioUrl={player.audioUrl} episodeId={player.id}/>
+			<AudioPlayer audioUrl={drawer.audioUrl} episodeId={drawer.id} />
 
 			<div className="show-notes"></div>
 		</Wrapper>
