@@ -16,6 +16,7 @@ const handler = nc().get(async (req, res) => {
 		showNotes: episode.description,
 		audioUrl: episode.audio_play_url_extension,
 		thumbnail: episode.channel.channel_image_big,
+		episode_link: episode.absolute_url,
 	}))
 
 	const { channel } = bundle.episodes[0];

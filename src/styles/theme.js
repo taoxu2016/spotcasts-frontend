@@ -11,4 +11,5 @@ export const darkTheme = {
 	purple: "#814FC7",
 	sliderBg: "#697098",
 	sliderThumb: "#BEC5D4",
+	bs1: "0 10px 20px rgba(0,0,0,0.1),0 6px 6px rgba(0,0,0,0.1)",
 };

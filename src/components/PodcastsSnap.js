@@ -11,8 +11,8 @@ const Wrapper = styled.div`
 	padding: 1rem;
 
 	img {
-		width: 80px;
-		height: 80px;
+		width: 65px;
+		height: 65px;
 		border-radius: 4px;
 		margin-right: 1rem;
 	}

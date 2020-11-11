@@ -3,7 +3,7 @@ import { client } from "../utils";
 import topics from "../data/topics";
 
 const Wrapper = styled.div`
-	position: fixed;
+	position: fixed !important;
 	width: 430px;
 	left: 67%;
 	margin-top: 2rem;
