@@ -2,7 +2,7 @@ import { useEffect, useContext, useState } from "react";
 import styled from "styled-components";
 import { CloseIcon } from "./Icons";
 import { DrawerContext } from "../context/DrawerContext";
-import { client } from "../utils";
+import { stripStr, client } from "../utils";
 
 const Wrapper = styled.div`
 	padding: 1rem;
@@ -90,7 +90,7 @@ const ListenLaterDrawer = () => {
 						onClick={() => playEpisode(episode)}
 					/>
 					<div className="episode-info">
-						<span>{episode.title}</span>
+						<span>{stripStr(episode.title, 35)}</span>
 
 						<div className="episode-meta">
 							<span>{episode.published}</span> <span>&bull;</span>{" "}
