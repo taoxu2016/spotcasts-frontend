@@ -32,6 +32,10 @@ SpotCasts - listen to podcasts, subscribe to podcasts, save individual episodes.
 4. Subscribe to podcasts
 5. Access podcasts by categories
 
+## Watch the demo
+
+[![Video](screenshots/home_player.png)](https://www.youtube.com/watch?v=19W8O-tX6cw "SpotCasts Demo")
+
 ## UI
 
 ### Home

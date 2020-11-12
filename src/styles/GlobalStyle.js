@@ -17,21 +17,21 @@ const GlobalStyle = createGlobalStyle`
 	}
 
 	*::-webkit-scrollbar-track {
-		background-color: ${props => props.theme.violet};
+		background-color: ${(props) => props.theme.violet};
 	}
 
 	*::-webkit-scrollbar-thumb {
-		background-color: ${props => props.theme.pink};
+		background-color: ${(props) => props.theme.pink};
 		border-radius: 4px;
 	}
 
 	body {
 		width: 80%;
 		margin: 2rem auto;
-		font-family: ${props => props.theme.font}, sans-serif;
+		font-family: ${(props) => props.theme.font}, sans-serif;
 		font-size: 1rem;
-		background-color: ${props => props.theme.bg};
-		color: ${props => props.theme.primaryColor};
+		background-color: ${(props) => props.theme.bg};
+		color: ${(props) => props.theme.primaryColor};
 		line-height: 1.6;
 	}
 
@@ -50,7 +50,7 @@ const GlobalStyle = createGlobalStyle`
 
 	input, button {
 		font-size: 1rem;
-		font-family: ${props => props.theme.font};
+		font-family: ${(props) => props.theme.font};
 	}
 
 	input:focus, button:focus, textarea:focus {
@@ -88,7 +88,7 @@ const GlobalStyle = createGlobalStyle`
 	}
 
 	.show-notes a {
-		color: ${props => props.theme.yellow};
+		color: ${(props) => props.theme.yellow};
 	}
 
 	.show-notes img, .show-notes hr{
